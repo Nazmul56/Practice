@@ -28,7 +28,7 @@ public class Splash extends Activity{
                 }catch(InterruptedException e){
                     e.printStackTrace();
                 }finally {
-                    Intent openStartingPoint = new Intent("practice.nazmul.practice.STRTINGPOINT");
+                    Intent openStartingPoint = new Intent("practice.nazmul.practice.MENUE");
 
                     startActivity(openStartingPoint);
 
