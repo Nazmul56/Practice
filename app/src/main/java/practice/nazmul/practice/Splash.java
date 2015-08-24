@@ -10,16 +10,16 @@ import android.os.Bundle;
  */
 public class Splash extends Activity{
 
-    //MediaPlayer ourSong;
+    MediaPlayer ourSong;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_activity);
 
-       // ourSong =MediaPlayer.create(Splash.this,R.raw.sleep);
+        ourSong =MediaPlayer.create(Splash.this,R.raw.sleep);
 
-       // ourSong.start();
+        ourSong.start();
 
         Thread timer = new Thread(){
             public void run(){
@@ -45,8 +45,9 @@ public class Splash extends Activity{
     @Override
     protected void onPause() {
         super.onPause();
-
+        ourSong.release();//this will stop music
         finish();//this mathod will release memory of splashActivity .
+
     }
 }
 
