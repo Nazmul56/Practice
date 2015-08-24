@@ -2,6 +2,7 @@ package practice.nazmul.practice;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 /**
@@ -9,11 +10,16 @@ import android.os.Bundle;
  */
 public class Splash extends Activity{
 
+    //MediaPlayer ourSong;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_activity);
 
+       // ourSong =MediaPlayer.create(Splash.this,R.raw.sleep);
+
+       // ourSong.start();
 
         Thread timer = new Thread(){
             public void run(){
@@ -34,4 +40,15 @@ public class Splash extends Activity{
 
         //
     }
+
+    // Here we add Pause mathod to release memory.
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        finish();//this mathod will release memory of splashActivity .
+    }
 }
+
+
+
