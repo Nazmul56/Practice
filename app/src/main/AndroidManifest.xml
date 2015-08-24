@@ -42,21 +42,13 @@
         <activity
             android:name=".TextPlay"
             android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="practice.nazmul.practice.TEXTPLAY" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
         </activity>
 
         <activity
             android:name=".Camera"
             android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="practice.nazmul.practice.CAMERA" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
         </activity>
 
     </application>
