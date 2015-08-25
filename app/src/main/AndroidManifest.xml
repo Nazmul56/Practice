@@ -31,7 +31,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Menue"
+            android:name=".Menu"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="practice.nazmul.practice.MENUE" />
@@ -59,6 +59,26 @@
             android:name=".OpenedClass"
             android:label="@string/app_name" >
 
+        </activity>
+        <activity
+            android:name=".AboutUs"
+            android:label="About"
+            android:theme="@android:style/Theme.Dialog">
+            <intent-filter>
+                <action android:name="practice.nazmul.practice.ABOUT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Prefs"
+            android:label="Prefences"
+            >
+            <intent-filter>
+                <action android:name="practice.nazmul.practice.PREFS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
     </application>
 

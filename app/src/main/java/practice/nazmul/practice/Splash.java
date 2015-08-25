@@ -2,8 +2,10 @@ package practice.nazmul.practice;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 
 /**
  * Created by nazmul on 8/24/15.
@@ -19,6 +21,12 @@ public class Splash extends Activity{
 
         ourSong =MediaPlayer.create(Splash.this,R.raw.sleep);
 
+
+        SharedPreferences getPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+
+        boolean music = getPrefs.getBoolean("checkbox",true);
+
+        if(music==true)
         ourSong.start();
 
         Thread timer = new Thread(){

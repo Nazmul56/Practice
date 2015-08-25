@@ -2,8 +2,6 @@ package practice.nazmul.practice;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -11,14 +9,14 @@ import android.widget.ListView;
 /**
  * Created by nazmul on 8/13/15.
  */
-public class Menue extends ListActivity {
+public class Menu extends ListActivity {
     String classes[] ={"StartingPoint", "TextPlay","Camera","Data","exmple4"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setListAdapter(new ArrayAdapter<String>(Menue.this, android.R.layout.simple_list_item_1,classes));
+        setListAdapter(new ArrayAdapter<String>(Menu.this, android.R.layout.simple_list_item_1,classes));
     }
 
     @Override
@@ -27,7 +25,7 @@ public class Menue extends ListActivity {
         String cheese = classes[position];
         try {
             Class ourClass = Class.forName("practice.nazmul.practice." + cheese);//This Create the Intent io go different activity
-            Intent ourIntent = new Intent(Menue.this, ourClass);
+            Intent ourIntent = new Intent(Menu.this, ourClass);
             startActivity(ourIntent);
         }catch(ClassNotFoundException e){
             e.printStackTrace();
@@ -35,7 +33,7 @@ public class Menue extends ListActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
         super.onCreateOptionsMenu(menu);
        // MenuInflater blowUp = getMenuInflater();
        // blowUp.inflate(R.menu.cool_menu, menu);
