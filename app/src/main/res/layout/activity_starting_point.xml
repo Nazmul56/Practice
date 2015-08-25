@@ -24,7 +24,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add"
+        android:background="@drawable/custom"
         android:id="@+id/bAdd"
         android:layout_below="@+id/tvdisplay"
         android:layout_alignParentLeft="true"
