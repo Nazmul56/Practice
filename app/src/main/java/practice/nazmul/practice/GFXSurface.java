@@ -7,6 +7,7 @@ import android.os.Bundle;
  */
 public class GFXSurface extends Activity {
     MyBringBackSurface ourSurfaceView;
+    float x, y;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -14,8 +15,18 @@ public class GFXSurface extends Activity {
         ourSurfaceView = new MyBringBackSurface(this);
         setContentView(ourSurfaceView);
 
-
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        ourSurfaceView.pause();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        ourSurfaceView.resume();
+
+    }
 }
