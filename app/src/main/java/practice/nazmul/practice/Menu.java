@@ -3,6 +3,8 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -10,13 +12,20 @@ import android.widget.ListView;
  * Created by nazmul on 8/13/15.
  */
 public class Menu extends ListActivity {
-    String classes[] ={"StartingPoint", "TextPlay","Camera","Data","exmple4"};
+    String classes[] ={"StartingPoint", "TextPlay","Camera","Data","GFX"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setListAdapter(new ArrayAdapter<String>(Menu.this, android.R.layout.simple_list_item_1,classes));
+        //fullscreen
+
+        //requestWindowFeature(Window.FEATURE_ACTION_BAR);
+        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+        //WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+
+        setListAdapter(new ArrayAdapter<String>(Menu.this, android.R.layout.simple_list_item_1, classes));
     }
 
     @Override
