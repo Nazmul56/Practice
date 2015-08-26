@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.view.View;
 
 /**
@@ -15,12 +16,16 @@ import android.view.View;
 public class MyBringBack extends View {
 
         Bitmap gBall;
-        float changingY =0;
+        float changingY;
+         Typeface font;
+
     public MyBringBack(Context context) {   // Constructor
         super(context);
         //TODO Auto-generated constructor
 
         gBall = BitmapFactory.decodeResource(getResources(),R.drawable.greenball); //Declare bitmap variable
+        changingY =0;
+        font = Typeface.createFromAsset(context.getAssets(),"G-Unit.ttf");
 
 
     }
@@ -28,7 +33,13 @@ public class MyBringBack extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawColor(android.R.color.white);//
+        canvas.drawColor(android.R.color.white);//Back
+        Paint textPaint = new Paint();
+        textPaint.setARGB(50,254,10,50); // here ...setARGB(Transparency,R,G,B)
+        textPaint.setTextAlign(Paint.Align.CENTER);
+        textPaint.setTextSize(50);
+        textPaint.setTypeface(font);
+        canvas.drawText("mybringback",canvas.getWidth()/2,200,textPaint);
         canvas.drawBitmap(gBall, (canvas.getWidth() / 2), changingY, null);// set the position of image
         if(changingY < canvas.getHeight()){
             changingY += 10; //It will increment 10 pixel
@@ -45,4 +56,5 @@ public class MyBringBack extends View {
         canvas.drawRect(middleRect,ourBlue);
         invalidate();
     }
+
 }
