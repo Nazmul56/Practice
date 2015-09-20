@@ -58,6 +58,13 @@ public class GFXSurface extends Activity implements View.OnTouchListener {
 
     @Override
     public boolean onTouch(View view, MotionEvent event) {
+       // Frame Per Second for slower Mobile
+        try {
+            Thread.sleep(50);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+        // ....FPS END....
         x = event.getX();
         y = event.getY();
 
