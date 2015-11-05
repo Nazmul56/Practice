@@ -60,7 +60,7 @@ public class SimpleBrowser extends Activity implements View.OnClickListener {
                 String theWebsite  = url.getText().toString();
                 ourBrow.loadUrl(theWebsite);
                 //Hiding keyboard after using this
-                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);//Hide Key board
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(url.getWindowToken(),0);
                 break;
             case R.id.bBack:
