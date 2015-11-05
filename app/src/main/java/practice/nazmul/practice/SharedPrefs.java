@@ -18,6 +18,7 @@ public class SharedPrefs extends Activity implements View.OnClickListener {
     SharedPreferences someData;
 
     public static String filename = "MySharedString";
+    //here we save data
 
     
     @Override
